@@ -62,16 +62,10 @@ class channels_mode:
         self.manager = mgr
         color_modes = ["Original", "Red", "Blue", "Green", "Gray"]
 
-        container = pgui.core.UIContainer(
-            relative_rect=pg.Rect((20, 20), (600, 300)),
-            manager=mgr,
-        )
-
         self.modes_button = pgui.elements.UIDropDownMenu(
             options_list=color_modes,
             starting_option=color_modes[0],
             relative_rect=pg.Rect((20, 30), (100, 30)),
-            container=container,
             manager=mgr,
         )
 
@@ -79,7 +73,6 @@ class channels_mode:
             relative_rect=pg.Rect((140, 30), (250, 30)),
             start_value=self.slider_value,
             value_range=(0, img.get_width()),
-            container=container,
             manager=mgr,
         )
 
@@ -87,35 +80,30 @@ class channels_mode:
             relative_rect=pg.Rect((140, 0), (100, 30)),
             start_value=self.win_size,
             value_range=(1, 10),
-            container=container,
             manager=mgr,
         )
 
         self.four_checkbox = pgui.elements.UICheckBox(
             text="4-связность",
             relative_rect=pg.Rect((390, 30), (30, 30)),
-            container=container,
             manager=mgr,
         )
 
         self.ate_checkbox = pgui.elements.UICheckBox(
             text="8-связность",
             relative_rect=pg.Rect((510, 30), (30, 30)),
-            container=container,
             manager=mgr,
         )
 
         self.HandmadeFilter_checkbox = pgui.elements.UICheckBox(
             text="weird filter",
             relative_rect=pg.Rect((390, 2), (30, 30)),
-            container=container,
             manager=mgr,
         )
 
         self.save_button = pgui.elements.UIButton(
             relative_rect=pg.Rect((510, 70), (110, 30)),
             text="Save image",
-            container=container,
             manager=mgr,
         )
 
